@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1.b. Berikan judul halaman yang sesuai -->
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+</head>
+<body style="background-color: #f4f4f9; font-family: Arial, sans-serif; margin: 20px;">
+
+    <!-- 5.a. Tambahkan elemen multimedia seperti gambar logo kampus di atas formulir -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="Logo stitek.jpg" alt="Logo Kampus" style="width: 120px; height: auto;">
+    </div>
+
+    <!-- 1.c. Tambahkan heading utama <h1> -->
+    <h1 style="text-align: center; color: #333;">Formulir Pendaftaran Mahasiswa Baru</h1>
+
+    <!-- 2. Formulir Pendaftaran -->
+    <form action="#" method="POST" style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        
+        <!-- ==================== BAGIAN DATA PRIBADI ==================== -->
+        <!-- 3.b. Gunakan fieldset dan legend -->
+        <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <legend style="font-weight: bold; padding: 0 10px; color: #0056b3;">Data Pribadi</legend>
+            
+            <!-- 2. Input Teks & 3.a. Label & 3.c. Placeholder & 3.d. Required -->
+            <div style="margin-bottom: 15px;">
+                <label for="nama">Nama Lengkap:</label><br>
+                <input type="text" id="nama" name="nama_lengkap" placeholder="Contoh: Budi Santoso" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- 2. Input Email & 4.a Validasi type="email" -->
+            <div style="margin-bottom: 15px;">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Contoh: budi@email.com" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+            </div>
+
+            <!-- 2. Radio Button -->
+            <div style="margin-bottom: 15px;">
+                <label>Jenis Kelamin:</label><br>
+                <input type="radio" id="pria" name="jenis_kelamin" value="Pria" required>
+                <label for="pria">Pria</label>
+                
+                <input type="radio" id="wanita" name="jenis_kelamin" value="Wanita" style="margin-left: 15px;">
+                <label for="wanita">Wanita</label>
+            </div>
+        </fieldset>
+
+        <!-- ==================== BAGIAN AKADEMIK & HOBI ==================== -->
+        <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <legend style="font-weight: bold; padding: 0 10px; color: #0056b3;">Informasi Tambahan</legend>
+
+            <!-- 2. Dropdown (Select) -->
+            <div style="margin-bottom: 15px;">
+                <label for="jurusan">Pilihan Jurusan:</label><br>
+                <select id="jurusan" name="jurusan" required style="width: 100%; padding: 8px; margin-top: 5px;">
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Manajemen">Manajemen</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                </select>
+            </div>
+
+            <!-- 2. Checkbox -->
+            <div style="margin-bottom: 15px;">
+                <label>Hobi (Pilih minimal 2):</label><br>
+                <input type="checkbox" id="membaca" name="hobi[]" value="Membaca">
+                <label for="membaca">Membaca</label><br>
+                
+                <input type="checkbox" id="olahraga" name="hobi[]" value="Olahraga">
+                <label for="olahraga">Olahraga</label><br>
+                
+                <input type="checkbox" id="musik" name="hobi[]" value="Musik">
+                <label for="musik">Musik</label>
+            </div>
+        </fieldset>
+
+        <!-- ==================== BAGIAN ALAMAT ==================== -->
+        <fieldset style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <legend style="font-weight: bold; padding: 0 10px; color: #0056b3;">Alamat</legend>
+
+            <!-- 2. Textarea (Opsional) -->
+            <div style="margin-bottom: 15px;">
+                <label for="alamat">Alamat Lengkap:</label><br>
+                <textarea id="alamat" name="alamat" rows="4" placeholder="Masukkan alamat lengkap rumah Anda..." style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- 2. Tombol Submit -->
+        <div style="text-align: center;">
+            <button type="submit" style="background-color: #0056b3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">Kirim Pendaftaran</button>
+        </div>
+
+    </form>
+
+    <!-- 5.b. Tambahkan link ke halaman informasi kampus di bawah formulir -->
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="https://www.google.com" target="_blank" style="color: #0056b3; text-decoration: none; font-weight: bold;">Kunjungi Halaman Informasi Kampus</a>
+    </div>
+
+</body>
+</html>
