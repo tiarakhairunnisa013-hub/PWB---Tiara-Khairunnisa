@@ -1,0 +1,42 @@
+<!--Responsive Design (Desain Responsif)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Tampilan Desktop (Default) */
+        body { 
+            background-color: lightblue;
+            font-family: Arial; 
+        }
+        h1 { 
+            font-size: 2vw; 
+            text-align: center;
+        }
+        .grid-container {
+            display: grid; 
+            grid-template-columns: 
+            repeat(3, 1fr); 
+            gap: 10px; 
+        }
+        .grid-item { 
+            background: white; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        /* TAMPILAN SMARTPHONE (Maksimal 600px) */
+        @media screen and (max-width: 600px) {
+            body { background-color: lightcoral; }
+            h1 { font-size: 8vw; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1>PRAKTIKUM PBW</h1>
+    <div class="grid-container">
+        <div class="grid-item">Dekstop</div>
+        <div class="grid-item">Smartphone</div>
+        <div class="grid-item">Komputer</div>
+    </div>
+</body>
+</html>
