@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slideshow</title>
+    <style>
+        /* Memposisikan ke tengah halaman dengan background sage green super lembut */
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f6f3;
+            font-family: Arial, sans-serif;
+        }
+        /* Kotak pembungkus estetik dengan sudut melengkung halus */
+        .gallery-box {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e0ede0;
+            border-radius: 16px;
+            text-align: center;
+            width: 620px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #4a5d4a; /* Warna hijau matcha gelap */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        /* Gambar disesuaikan agar ukurannya pas di card */
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        /* Container tombol */
+        .nav-buttons {
+            margin-top: 15px;
+        }
+        /* Mengubah tombol menjadi lebih simpel dan melengkung lembut */
+        button {
+            padding: 8px 20px;
+            font-size: 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #8fbc8f; /* Warna hijau sage */
+            color: white;
+            border-radius: 8px; /* Sudut tombol agak bulat */
+        }
+        button:hover {
+            background-color: #70a370;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-box">
+        <h2>Galeri Gambar Matcha</h2>
+
+        <img id="slideshow-image" src="" alt="Slideshow">
+
+        <div class="nav-buttons">
+            <!-- Tombol diubah menjadi simbol panah yang simpel -->
+            <button onclick="gantiGambar(-1)">❮ Prev</button>
+            <button onclick="gantiGambar(1)">Next ❯</button>
+        </div>
+    </div>
+
+    <script>
+        var gambar = [
+            "https://i.pinimg.com/736x/42/b5/4d/42b54d7326a66b3d90fa3184cc970f0d.jpg",
+            "https://i.pinimg.com/736x/af/2d/d3/af2dd31cfa59cd52d2a1b2ac0b7723d3.jpg",
+            "https://i.pinimg.com/736x/17/1b/5e/171b5e549fbfa96c807e45361b978d65.jpg",
+            "https://i.pinimg.com/736x/10/97/2e/10972e835e3ef07a49755c531af17774.jpg",
+            "https://i.pinimg.com/736x/b2/1a/47/b21a475f0b1976c91356d429733c778a.jpg"
+        ];
+
+        var indexGambar = 0;
+        var imageElement = document.getElementById("slideshow-image");
+
+        function tampilkanGambar() {
+            imageElement.src = gambar[indexGambar];
+        }
+
+        function gantiGambar(arah) {
+            indexGambar += arah;
+            if (indexGambar >= gambar.length) indexGambar = 0;
+            if (indexGambar < 0) indexGambar = gambar.length - 1;
+            tampilkanGambar();
+        }
+
+        tampilkanGambar();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jam Digital</title>
+    <style>
+        /* Memposisikan konten tepat di tengah layar */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fcfcfc; /* Warna dasar pink pastel sangat lembut */
+            font-family: sans-serif;
+        }
+        /* Kotak jam dengan sudut melengkung halus */
+        .clock-box {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ffccd5; /* Border pink soft */
+            border-radius: 16px; /* Sudut melengkung lembut */
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #ff758f; /* Warna text pink cerah */
+            font-size: 18px;
+        }
+        /* Tampilan angka jam */
+        #jam {
+            font-size: 2.5em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #c9184a; /* Warna angka maroon/rose pink yang kontras dan cantik */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body onload="jalankanJam()">
+
+    <div class="clock-box">
+        <h2>Jam Digital Real-Time</h2>
+        <div id="jam">00:00:00</div>
+    </div>
+
+    <script>
+        function updateJam() {
+            var sekarang = new Date();
+            var jam = sekarang.getHours();
+            var menit = ngayon = sekarang.getMinutes();
+            var detik = sekarang.getSeconds();
+
+            // Tambahkan nol di depan jika angka < 10
+            jam = (jam < 10 ? "0" : "") + jam;
+            menit = (menit < 10 ? "0" : "") + menit;
+            detik = (detik < 10 ? "0" : "") + detik;
+
+            var waktuString = jam + ":" + menit + ":" + detik;
+            document.getElementById("jam").innerText = waktuString;
+        }
+
+        function jalankanJam() {
+            updateJam(); // Panggil sekali di awal agar tidak delay 1 detik
+            setInterval(updateJam, 1000);
+        }
+    </script>
+</body>
+</html>

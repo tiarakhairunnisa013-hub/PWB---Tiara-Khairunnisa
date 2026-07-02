@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Logika Percabangan</title>
+</head>
+
+<body>
+
+    <h2>Hitung Diskon Belanja</h2>
+
+    <p>Masukkan jumlah belanja:</p>
+
+    <input type="number" id="totalBelanja" placeholder="Misal: 150000">
+
+    <button onclick="cekDiskon()">Hitung</button>
+
+    <h3 id="hasil"></h3>
+
+    <script>
+        function cekDiskon() {
+
+            var total = parseFloat(document.getElementById("totalBelanja").value);
+            var pesan = "";
+
+            if (isNaN(total)) {
+
+                pesan = "Silakan masukkan angka yang benar.";
+
+            } else if (total >= 25000) { // Jika belanja Rp 25.000 atau lebih
+
+                // Diskon langsung 15%
+                var diskon = total * 0.15;
+                var totalBayar = total - diskon;
+
+                pesan = "Anda memperoleh diskon 15% sebesar Rp " +
+                    diskon +
+                    ". Jumlah yang harus dibayar: <b>Rp " +
+                    totalBayar +
+                    "</b>";
+
+            } else {
+
+                // Jika di bawah Rp 25.000 tidak mendapat diskon
+                pesan = "Belanja belum memenuhi syarat diskon. Jumlah yang harus dibayar: <b>Rp " +
+                    total +
+                    "</b>";
+
+            }
+
+            document.getElementById("hasil").innerHTML = pesan;
+
+        }
+    </script>
+
+</body>
+</html>

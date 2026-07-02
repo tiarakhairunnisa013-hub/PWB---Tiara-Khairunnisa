@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Objek String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 14px;
+        }
+        #hasilAnalisis {
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Analisis Nama Lengkap</h2>
+
+    <input type="text" id="inputNama" placeholder="Masukkan nama lengkap Anda" size="30">
+
+    <button onclick="analisisNama()">Analisis</button>
+
+    <p id="hasilAnalisis"></p>
+
+    <script>
+        function analisisNama() {
+            var nama = document.getElementById("inputNama").value;
+
+            // Validasi jika input masih kosong
+            if (nama.trim() === "") {
+                document.getElementById("hasilAnalisis").innerHTML = "<span style='color: red;'>Silakan masukkan nama lengkap Anda terlebih dahulu!</span>";
+                return;
+            }
+
+            var hasil = "";
+            hasil += "Nama dalam huruf kapital: <b>" + nama.toUpperCase() + "</b><br>";
+            hasil += "Jumlah karakter (termasuk spasi): <b>" + nama.length + "</b> karakter<br>";
+            hasil += "3 karakter pertama: <b>" + nama.substring(0, 3) + "</b>";
+
+            document.getElementById("hasilAnalisis").innerHTML = hasil;
+        }
+    </script>
+
+</body>
+</html>

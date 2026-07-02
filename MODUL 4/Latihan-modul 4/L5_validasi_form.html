@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Praktikum PBW</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Formulir Praktikum Pemrograman berbasis web</h2>
+
+    <form onsubmit="return validasi()">
+
+        <label for="nama">Nama Praktikan:</label><br>
+        <input type="text" id="nama" name="nama"><br>
+        <small id="nama-error" class="error"></small><br><br>
+
+        <label for="nim">Nim Praktikan:</label><br>
+        <input type="text" id="nim" name="nim"><br>
+        <small id="nim-error" class="error"></small><br><br>
+
+        <label for="email">Email Praktikan:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <small id="email-error" class="error"></small><br><br>
+
+        <input type="submit" value="Kirim">
+
+    </form>
+
+    <script>
+
+        function validasi() {
+            // Mengambil nilai input
+            var inputNama = document.getElementById("nama").value;
+            var inputEmail = document.getElementById("email").value; // Ambil nilai email
+
+            // Mengambil elemen error
+            var namaError = document.getElementById("nama-error");
+            var emailError = document.getElementById("email-error"); // Ambil elemen error email
+
+            // Reset pesan error terlebih dahulu agar tidak menumpuk
+            namaError.innerHTML = "";
+            emailError.innerHTML = "";
+
+            // Validasi Nama
+            if (inputNama == "") {
+                namaError.innerHTML = "Nama praktikan tidak boleh kosong!";
+                return false;
+            }
+
+            // Validasi Email (Memastikan tidak kosong)
+            if (inputEmail == "") {
+                emailError.innerHTML = "Email praktikan tidak boleh kosong!";
+                return false;
+            }
+
+            // Jika semua validasi lolos
+            alert("Data praktikum berhasil dikirim!");
+            return true;
+        }
+
+    </script>
+
+</body>
+</html>

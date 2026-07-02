@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Handling - Praktikum Pemrograman Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 30px;
+        }
+
+        #inputNama {
+            border: 2px solid #ccc;
+            padding: 8px;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        #inputNama:focus {
+            border-color: dodgerblue;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Praktikum Pemrograman Web - Event Mouse</h3>
+
+    <img id="gambar"
+         src="https://placehold.co/200x150/e8e8e8/000?text=Halaman+Praktikum"
+         alt="Gambar Praktikum"
+         onmouseover="gantiGambar()"
+         onmouseout="kembalikanGambar()">
+
+    <hr>
+
+    <h3>Praktikum Pemrograman Web - Input Nama Praktikan</h3>
+
+    <label for="inputNama">Masukkan Nama Praktikan:</label>
+    <input type="text" id="inputNama" onchange="tampilkanOutput()">
+
+    <p>Nama Praktikan: <span id="hasil"></span></p>
+
+    <script>
+        function gantiGambar() {
+            document.getElementById("gambar").src =
+            "https://i.pinimg.com/736x/7f/39/a4/7f39a4621d77d42f7510dba9d7436868.jpg";
+        }
+
+        function kembalikanGambar() {
+            document.getElementById("gambar").src =
+            "https://i.pinimg.com/736x/54/fb/f7/54fbf7d5e61574aac1c7439b5286aa7c.jpg";
+        }
+
+        function tampilkanOutput() {
+            let inputNama = document.getElementById("inputNama").value;
+            document.getElementById("hasil").innerHTML =
+            "<b>" + inputNama + "</b> sedang mengikuti Praktikum Pemrograman Web.";
+        }
+    </script>
+
+</body>
+</html>

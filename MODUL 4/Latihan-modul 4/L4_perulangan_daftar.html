@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Perulangan</title>
+</head>
+
+<body>
+
+    <h2>Latihan Daftar Perulangan</h2>
+
+    <ul id="daftar-nama">
+        <!-- Konten akan diisi oleh JavaScript -->
+    </ul>
+
+    <script>
+
+        var nama = [
+            "Tiara Khairunnisa",
+            "Mutiara Ramadhani",
+            "Aulia",
+            "Siti Aisyah",
+            "Nurhidayah"
+        ];
+
+        var daftarElement = document.getElementById("daftar-nama");
+
+        for (let i = 0; i < nama.length; i++) {
+            daftarElement.innerHTML += "<li>" + nama[i] + "</li>";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Objek Math</title>
+    <style>
+        /* Memposisikan ke tengah halaman */
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+        }
+        /* Kotak dibuat agak bulat di sudutnya (tidak kaku) */
+        .box {
+            background: white;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 12px; /* Membuat sudut kotak melengkung halus */
+            text-align: center;
+            width: 280px;
+        }
+        /* Tombol dibuat senada dengan tema lengkung */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px; /* Membuat sudut tombol agak bulat */
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Angka hasil acak */
+        #angkaAcak {
+            color: #007bff;
+            font-size: 40px;
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2 style="margin-top:0; color:#333;">Angka Acak</h2>
+        <p style="color:#666;">Klik untuk acak angka 1 - 100</p>
+        
+        <span id="angkaAcak">?</span>
+        
+        <button onclick="generateRandom()">Hasilkan Angka</button>
+    </div>
+
+    <script>
+        function generateRandom() {
+            var angka = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("angkaAcak").innerText = angka;
+        }
+    </script>
+
+</body>
+</html>
