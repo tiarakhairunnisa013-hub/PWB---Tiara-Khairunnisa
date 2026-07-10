@@ -10,7 +10,6 @@
             background-color: #f4f6f4; /* Background disesuaikan agak keabu-hijauan muda */
             font-size: 1.15rem; 
         }
-        
         /* Tema Utama: Hijau Sage */
         .bg-sage {
             background-color: #87a987 !important;
@@ -29,17 +28,14 @@
         .border-sage {
             border-color: #87a987 !important;
         }
-
         .product-item { cursor: pointer; transition: 0.2s; }
         .product-item:hover { background-color: #f1f3f5; }
         .active-item { background-color: #e8efe8 !important; border-left: 6px solid #5c7a5c; }
-        
         .slideshow-img { 
             height: 380px; 
             object-fit: contain; 
             background: white; 
         }
-        
         .form-control, .btn {
             padding: 0.75rem 1rem;
             font-size: 1.1rem;
@@ -83,7 +79,9 @@
                             <input type="text" id="kodePromo" class="form-control" placeholder="DISKON10">
                         </div>
                     </div>
-                    <button class="btn btn-sage w-100 fw-bold fs-5 mt-2 py-3" onclick="prosesPemesanan()">Pesan Sekarang</button>
+                    <button 
+                    class="btn btn-sage w-100 fw-bold fs-5 mt-2 py-3" onclick="prosesPemesanan()">Pesan Sekarang
+                    </button>
                 </div>
 
                 <div id="area-struk" class="card border-sage border-2 p-4 d-none shadow-sm bg-white">
@@ -150,7 +148,7 @@
             dataProduk.forEach((produk, index) => {
                 const isActive = index === produkAktifIndex ? 'active-item' : '';
                 container.innerHTML += `
-                    <div class="list-group-item product-item p-4 ${isActive}" onclick="gantiProduk(${index})">
+                    <div class="list-group-item product-item pD${isActive}" onclick="gantiProduk(${index})">
                         <div class="fw-bold">${produk.nama}</div>
                         <small class="text-muted fs-6">Rp ${produk.harga.toLocaleString('id-ID')}</small>
                     </div>`;
